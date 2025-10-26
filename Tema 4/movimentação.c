@@ -26,5 +26,31 @@ int main() {
         k++;
     } while(k <= 8);
 
+    // ===============================================
+    // Cavalo → anda duas casas para baixo e uma para a esquerda (usando loops aninhados)
+    // ===============================================
+    int movimentosBaixo = 2;
+    int movimentosEsquerda = 1;
+    int contadorBaixo, contadorEsquerda;
+
+    printf("\nMovimento do Cavalo:\n");
+
+    // Loop externo (for): move o cavalo para baixo
+    for(contadorBaixo = 1; contadorBaixo <= movimentosBaixo; contadorBaixo++) {
+        printf("Baixo\n");
+
+        // Loop interno (while): move o cavalo para a esquerda após descer
+        contadorEsquerda = 0;
+        while(contadorEsquerda < movimentosEsquerda && contadorBaixo == movimentosBaixo) {
+            printf("Esquerda\n");
+            contadorEsquerda++;
+        }
+    }
+
+    // O Cavalo se move em "L":
+    // - 2 casas para baixo (controladas pelo for)
+    // - 1 casa para a esquerda (controlada pelo while dentro do for)
+    // Isso garante o uso de loops aninhados, como solicitado no desafio.
+
     return 0;
 }
